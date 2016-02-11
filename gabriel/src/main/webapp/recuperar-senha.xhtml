@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:body>
+	<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+		template="/commons/template.xhtml">
+
+		<ui:define name="content">
+			<h1>Recuperar senha</h1>
+			<h:form>
+				<h:commandLink value="Inicio" action="index.xhtml?faces-redirect=true" immediate="true"/>
+				<h:messages />
+				<h:panelGrid columns="2" cellpadding="1">
+					<h:outputLabel value="Email" />
+					<h:inputText value="#{recuperarSenhaController.email}" required="true"
+						requiredMessage="Você precisa informar o email." />
+					<f:facet name="footer">
+						<h:panelGroup style="display:block; text-align:center">
+							<h:commandButton value="Enviar"
+								action="#{recuperarSenhaController.recuperarSenha}" />
+						</h:panelGroup>
+					</f:facet>
+				</h:panelGrid>
+			</h:form>
+		</ui:define>
+
+	</ui:composition>
+
+</h:body>
+
+</html>
