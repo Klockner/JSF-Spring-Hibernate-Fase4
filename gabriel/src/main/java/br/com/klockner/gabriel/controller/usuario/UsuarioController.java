@@ -38,11 +38,6 @@ public class UsuarioController {
 		usuarioService.salvar(usuario);
 	}
 	
-	//TODO apagar depois, só teste
-	public String printMsg() {
-		return usuarioService.printMsg();
-	}
-	
 	public UsuarioService getUsuarioService() {
 		return usuarioService;
 	}
@@ -58,6 +53,4 @@ public class UsuarioController {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-	
-	
 }

@@ -10,7 +10,4 @@ import br.com.klockner.gabriel.model.usuario.Usuario;
  */
 public interface UsuarioService {
 	public void salvar(Usuario usuario);
-	
-	//TODO só para teste, apagar depois
-	public String printMsg();
 }
