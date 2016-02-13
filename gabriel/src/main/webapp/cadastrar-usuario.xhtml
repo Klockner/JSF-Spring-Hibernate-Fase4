@@ -10,16 +10,28 @@
 		template="/commons/template.xhtml">
 		<ui:define name="content">
 		
-			<h1>#{usuarioController.printMsg()}</h1>
-			<h:form id="form">
+			<h1>Cadastrar</h1>
+			<h:form id="formulario">
 				<h:commandLink value="Inicio"
 						action="index.xhtml?faces-redirect=true" immediate="true"/>
-				<h:messages />
-				<p:panelGrid id="panel" columns="2" cellpadding="4">
-					<p:outputLabel value="Usuario " />
+				<h:panelGrid id="grid" columns="2" cellpadding="4">
+					<h:messages id="msg" />
+					<br/>
+					<p:outputLabel value="Nome " />
 					<p:inputText value="#{usuarioController.usuario.nome}" required="true"
-						requiredMessage="Você esqueceu de digitar o email" />
-				</p:panelGrid>
+						requiredMessage="Você precisa digitar o nome" />
+					<p:outputLabel value="Email " />
+					<p:inputText value="#{usuarioController.usuario.email}" required="true"
+						requiredMessage="Você precisa digitar o email" />
+					<p:outputLabel value="Username " />
+					<p:inputText value="#{usuarioController.usuario.userName}" required="true"
+						requiredMessage="Você esqueceu de digitar o username" />
+					<p:outputLabel value="Senha " />
+					<p:password value="#{usuarioController.usuario.senha}" required="true"
+						requiredMessage="Você precisa digitar o senha" />
+					
+					<p:commandButton value="Cadastrar" action="#{usuarioController.salvar}" process="@this, @form" update="grid"/>
+				</h:panelGrid>
 			</h:form>
 		</ui:define>
 

@@ -3,22 +3,48 @@
  */
 package br.com.klockner.gabriel.model.usuario;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * @author Gabriel Klockner
  */
 
-//HIbernate
-//@Entity
+@Entity
+@Table(name = "usuario")
 public class Usuario {
-	private String nome;
-	private int idade;
-	private String email;
-	private String senha;
-//	@Id
-	private long id;
 	
-	public long getId() {
+	@Id
+	@GeneratedValue
+	@Column(name = "id")
+	private Long id;
+	
+	@Column(name = "nome", length = 50, nullable = true)
+	private String nome;
+	
+	@Column(name = "email", length = 50, nullable = true)
+	private String email;
+	
+	@Column(name = "user_name", length = 50, nullable = true)
+	private String userName;
+	
+	@Column(name = "senha", length = 50, nullable = true)
+	private String senha;
+
+	public Long getId() {
 		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 	public void setId(long id) {
 		this.id = id;
@@ -28,12 +54,6 @@ public class Usuario {
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-	public int getIdade() {
-		return idade;
-	}
-	public void setIdade(int idade) {
-		this.idade = idade;
 	}
 	public String getEmail() {
 		return email;
@@ -47,4 +67,5 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+
 }
